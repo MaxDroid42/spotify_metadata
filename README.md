@@ -1,5 +1,5 @@
 # spotify_metadata
-Get basic metadat of songs by their Sptify-Track-ID.
+Get basic metadata of songs by their Sptify-Track-ID.
 
 
 ## needed dependencies
