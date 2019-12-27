@@ -21,6 +21,6 @@ On Windows:
 
 ### from within python
 ```python3
-from metadata_by_track_id.py import metadata
+from metadata_by_track_id import metadata
 response=metadata(TRACK_ID)
 ```
