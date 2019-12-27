@@ -4,7 +4,7 @@ def metadata(t_id):
     from lxml import etree
     import re
 
-    url="https://open.spotify.com/track/"+t_id
+    url="https://open.spotify.com/track/"+str(t_id)
 
     r=requests.get(url).content
     tree=html.fromstring(r)
