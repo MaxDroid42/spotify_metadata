@@ -18,7 +18,7 @@ def metadata(t_id):
     for e in t_artist:
         a_artists+=str(etree.tostring(e, pretty_print=True))
 
-    a_pat=">[a-zA-Z0-9\s!?§$%&#-]+<"
+    a_pat=">[a-zA-Z0-9\s!?§$%&#-_]+<"
     res_artists=re.findall(a_pat, a_artists)
 
     #pop ">By <"
@@ -31,7 +31,7 @@ def metadata(t_id):
     for e in t_cover_url:
         cover_elem=str(etree.tostring(e, pretty_print=True))
 
-    cover_pat="url\([\.a-zA-Z0-9\/-]*\),"
+    cover_pat="url\([\.a-zA-Z0-9\/-_]*\),"
     res_url=re.findall(cover_pat, cover_elem)
     cover_url=[res_url[0][6:-2]]
 
