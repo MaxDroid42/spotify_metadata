@@ -18,14 +18,15 @@ def metadata(t_id):
     for e in t_artist:
         a_artists+=str(etree.tostring(e, pretty_print=True))
 
-    a_pat=">[a-zA-Z0-9\s!?§$%&#-_]+<"
+    a_pat=">[a-zA-Z0-9\s!?§$%&#-_]+</a>"
     res_artists=re.findall(a_pat, a_artists)
 
     #pop ">By <"
-    res_artists.pop(0)
+    if res_artists[0] == ">By <":
+        res_artists.pop(0)
     artists=[]
     for artist in range(len(res_artists)):
-        artists.append(res_artists[artist][1:-1])
+        artists.append(res_artists[artist][1:-4])
 
     #track cover
     for e in t_cover_url:
